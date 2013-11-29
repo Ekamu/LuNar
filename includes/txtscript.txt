@@ -1,0 +1,133 @@
+Chapter 1: Twilight in the Lucid Moon
+    --breif introduction to main character
+scene bg Black
+    "???" "..."
+    "???" "Hello is anyone there?"   
+choice:
+     "yes":jump yes      --continue
+     "...":exit_game     --end game   
+label yes:
+sprite = itzel_neutral.line 
+      "???" "I've never encountered a ghost before...but your presence is very peacful"
+      "???" "I guess ghosts really exist here... in this place"
+      "???" "Sorry, I forgot to introduce myself"
+      "???" "My name is Itzelcoatl..."
+      Itzel "I dont really know where to begin...or how \'introductions\' work"
+      Itzel "..."
+      Itzel "usually there is no one to talk here...its always so lonely"
+      Itzel "forgive me, usually I'm alone most of the time...I'm not used to conversation"
+      Itzel "but I want to talk to more often..."
+      Itzel "to know what it feels like to have a friend"
+Input = ("What is your name?",max_length=20)
+      Itzel user_name .. "that's such a strange name..."
+      Itzel "but that's O.K...I'm sure lots of ghosts have unusual names"
+      Itzel "On a night like this, the Moon looks so beautifull, I'm happy to share it with you user_name."
+	  
+    --player interaction
+scene = Moon
+sprite = itzel_neutral.color
+      Itzel "What do you want to talk about?"
+choice:
+      "where am I?" jump where?
+	  "why is the Moon strange?" jump moon?
+label: where?
+      Itzel "This place...is the Lucid Moon"
+      Itzel "The Moon has always been my sanctuary and hiding place."
+      Itzel "Its also where all the new souls end up"
+      Itzel "... I dont really know how you came to this place..."
+      Itzel "..."
+      Itzel "They used to be a place for new souls..."
+      Itzel "somewhere in Sky Haven..."
+      Itzel "not anymore..."
+laber: moon?
+      Itzel "This moon...is the Lucid Moon"
+	  Itzel "The Moon has always been my sanctuary and hiding place."
+      Itzel "Its also where all the new souls end up"
+      Itzel "... I dont know why but recently its aurua is strange..."
+      Itzel "..."
+      Itzel "They used to be a place for new souls..."
+      Itzel "somewhere in Sky Haven..."
+      Itzel "not anymore..."
+	  --loops back to the main branch
+laber: main
+sprite = itzel_neautral.color at left
+      Itzel "The world has fallen into chaos..."
+      Itzel "..."
+sprite = lucifer_neutral.line at right
+      Itzel "...and Lucifer has taken over Sky Haven..."
+      Itzel "..."
+      Itzel "He has possesion of the Ghost Lantern"
+      Itzel "and has powers that are un-imaginable..."
+sprite_nill = lucifer_neutral.line 
+      Itzel "I fear that there is no hope"
+      Itzel "..."
+	  Itzel "but we must try and stop him..."
+	  Itzel "becuase... I am the last of the Star Serpents"
+	  Itzel "The last Godess"
+	  Itzel "Not long ago we lived in Sky Haven...Lucifer..."
+	  Itzel "He destroyed my home..."
+	  Itzel "The Lucid Moon was the only place I could run...My family...friends..."
+sprite = itzel_negative
+	  Itzel "It was too late..."
+	  itzel "the Ghost Lantern destroyed everything..."
+scene = devil_force_no_eyes.vauge
+	  itzel "and the devil+force took over Sky Haven"
+	  
+sprite_nil = itzel_negative      
+scene = black 
+      narration_begin
+      nar "Meanwhile in Sky Haven, the New Lord Lucifer is praised by his followers..." 
+sprite = lucifer_neutral.line
+      nar "Oh You Wisest and fairest of Angels, God betrayed by destiny and deprived of praise"
+      nar "O Prince of Exile, you who have been wronged And who vanquished always rise up again more strong"
+      nar "You who know all, great king of hidden things,The familiar healer of sufferings"
+      nar "You who give the outlaw that calm and haughty look That damns the whole multitude around his scaffold."
+      nar "You who to console frail mankind in its sufferings Taught us to mix sulphur and saltpeter"
+      nar "Staff of those in exile, lamp of the inventor, Confessor of the hanged and of conspirators"
+      nar "Adopted father of those whom in black rage Quetzalcoatl drove from the earthly paradise"
+      nar "Glory and Praise to you,O New Morning-Star,In the Heights of Heaven and in the Depths of the Underworld"
+      nar "Where once vanquished you dreamt in silence and rose as King of Kings!"
+      nar "O Lucifer take pity, new Lord of the Spirit World"
+sprite = lucifer_negative.color
+      nar "Lucifers followers dissipate and he is left alone to contemplate with the Devil-Force"
+scene = devil_force_no_eyes.vivid
+sprite = lucifer_positive.color 
+      Lucifer "Now that I have possesion of the Ghost Lantern, I have returned to Sky Haven..."
+      Lucifer "Even though with clipped wings, I have risen against my enemies"
+      Lucifer "The Lords of Old who had forsaken their people..."
+      Lucifer "just as they forsook me..."
+      Lucifer "Still an offspring of Orphidia remains...That Star-Serpent Itzelcoatl!"
+      Lucifer "Moon Goddess..."
+      Lucifer "She is but an infant, however I must eliminate her..."
+      Lucifer "Her accursed bloodline, the daughter of Quetzalcoatl and her mother Yuki Onna"
+      Lucifer "Left to grow, she will soon become aware of her powers"
+      Lucifer "..."
+sprite = lucifer_neutral.color 	  
+      Lucifer "But ofcourse, If I could harness her powers..."
+	  Lucifer "and seduce her to become my Queen"
+      Lucifer "She would aid me greatly in establishing a new world order!"
+      Lucifer "...I could surely use someone promising as her"
+      Lucifer "Her Father Quetzelcoatl was vanquished in the Black Sun...The center of creation..."
+sprite = lucifer_positive.color
+      Lucifer "He fell in love with that harlot Yuki Onna...hahaha...what a fool."
+      Lucifer "Becuase of such foolishness he left his post as watcher of Ara and bearer of the Morning Star"
+	  Lucifer "The Ghost Lanterns twin...Venus"
+      Lucifer "It was then the perfect oportunity for me to steal the Ghost Lantern"
+	  Luficer "...during Qutzalcoatls absence, there was no watcher to protect those lost sheep"
+	  Lucifer "During the Twilight of the Sun, I ascended into Sky Haven where I now Rule"
+      Lucifer "It was fate... and my vengence was served..."
+sprite = lucifer_neutral.color
+	  Lucifer "However this is but the begining of my rulership over the Stars"
+	  Lucifer "And soon the Universe!"
+	  Lucufer "As for the Infant Brat, Itzelcoatl"
+      Lucifer "I shall send my loyal servant and companion Beelzebub to confront her"
+      Lucifer "Not to slay her as yet, for it would be a waste of such great potential"
+sprite = lucifer_positive.color
+      Lucifer "her deliciouse blood...It's too presiouse to waste away..."
+scene = devil_force_eyes.vauge
+      Lucifer "The Devil-Force hungers for her, and so do I..."
+      Lucifer "I can sense your thirst..."
+sprite_nill = lucifer_neautral
+scene = devil_force_eyes.vivid
+      Devil_Force "The Lucid Moon will eclipse in 90 days..."
+	  Devil_Force "and on that day Beelzebub shall \'console\' our dear princess"
