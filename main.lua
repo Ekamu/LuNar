@@ -20,6 +20,7 @@ end
 function love.update(dt)
 --update loop
     game_time,delta_time = global_time(dt) --run global timer
+	text.msg = kana(text.msg) --convert to ASCI Kana
     text_loop(dt)
     next_page = not text_prog() --no more text in progress
     lunar() --run visual novel
