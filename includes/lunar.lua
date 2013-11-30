@@ -49,11 +49,11 @@ if page.label == "demo" then
     elseif page.c == 1 then
 	    text.label = kore.name
 		bubble.select('lhs','top','talk')
-        text.msg = "the quick brown fox jumped over the lazy dog"--some trial and error
+        text.msg = "yo yoyoyokoso dozo hihaho yayuyo"--some trial and error
 	elseif page.c == 2 then
 	    text.label = itzel.name
 		bubble.select('rhs','mid','think')
-	    text.msg = "i heard that on 123456789 times this week" 
+	    text.msg = "teme na baga muno" 
 	elseif page.c == 3 then
 	    ghost_clear()
 	    char.left = lucifer.sprite[2]
@@ -63,7 +63,7 @@ if page.label == "demo" then
 	elseif page.c == 4 then
 	    text.label = lucifer.name
 		bubble.select('lhs','low','talk')
-		text.msg = "compute this ladies"..
+		text.msg = "sakana ha suki desuka"..
 		"0010010001010100101000100100101000101"..
 		"0010010001010100101000100100101000101"..
 		"0010010001010100101000100100101000101"..
@@ -72,7 +72,7 @@ if page.label == "demo" then
 	elseif page.c == 5 then
 	    text.label = kore.name
 		bubble.select('rhs','low','nar')
-		text.msg = "thats impossible!"
+		text.msg = "yokoso tuduki a,iu,eo!"
 	elseif page.c == 6 then
 	    jump('title',0)
 	end

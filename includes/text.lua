@@ -8,6 +8,11 @@ load = function() --loads text system data and resources
     .."abcdefghijklmnopqrstuvwxyz"..'0123456789.,""!?()_/-+:;\\<>'),
     love.graphics.newImageFont("resources/font2.png"," ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     .."abcdefghijklmnopqrstuvwxyz"..'0123456789.,""!?()_/-+:;\\<>'),
+	--Japanese ImageFonts (Hiragana)
+	love.graphics.newImageFont("resources/font3.png"," qwertyuiopasdfghjkl;nm,./zxcvbQWERT"
+    .."!@#$%^&*{}|YUIOPASDFGHJKL:ZXCVBNM<>?"..'0123456789`~()-+'),
+	love.graphics.newImageFont("resources/font4.png"," qwertyuiopasdfghjkl;nm,./zxcvbQWERT"
+    .."!@#$%^&*{}|YUIOPASDFGHJKL:ZXCVBNM<>?"..'0123456789`~()-+'),
     } 	
 end;
 draw = function()
@@ -120,11 +125,11 @@ draw = function()
 	        love.graphics.draw(bubble.set,bx,by)--speach balloon
 			--set font for speach bubble
 			if bubble.style == 'talk' then
-			    love.graphics.setFont(font[1])--black text
+			    love.graphics.setFont(font[3])--black text
 			elseif bubble.style == 'think' then
-			    love.graphics.setFont(font[2])--white text
+			    love.graphics.setFont(font[4])--white text
 			elseif bubble.style == 'nar' then
-			    love.graphics.setFont(font[2])--white text
+			    love.graphics.setFont(font[4])--white text
 			end
             love.graphics.print(text.cat,tx,ty)--draw text (use text.msg in lunar())
 	    end
@@ -191,7 +196,7 @@ function text_loop(dt)--draw text one at a time
             text.t = 0
 	        --add the letter      
 	        if text.cat:len() <= text.max and text.cat:len() <= text.msg:len() then
-                text.cat = text.cat..text.msg.sub(text.msg,text.c,text.c) 
+                text.cat = text.cat..text.msg:sub(text.c,text.c) 
                 text.c = text.c + 1 --next letter (text count)
 		        text.n = text.n + 1 --next letter (line count)
 	            if text.n == text.line then --end of line
@@ -265,3 +270,173 @@ function lex_num(num,j)--compares user_data string_numbers
 	return false
 	end
 end
+
+function kana(txt)
+txt = txt:gsub('ka','y')--6
+txt = txt:gsub('ga','Y')--7
+txt = txt:gsub('ki','u')--8
+txt = txt:gsub('gi','U')--9
+txt = txt:gsub('ku','i')--10
+txt = txt:gsub('gu','I')--11
+txt = txt:gsub('ke','o')--12
+txt = txt:gsub('ge','O')--13
+txt = txt:gsub('ko','p')--14
+txt = txt:gsub('go','P')--15
+txt = txt:gsub('sa','a')--16
+txt = txt:gsub('za','A')--17
+txt = txt:gsub('si','s')--18
+txt = txt:gsub('ji','S')--19
+txt = txt:gsub('su','d')--20
+txt = txt:gsub('zu','D')--21
+txt = txt:gsub('se','f')--22
+txt = txt:gsub('ze','F')--23
+txt = txt:gsub('so','g')--24
+txt = txt:gsub('zo','G')--25
+txt = txt:gsub('ta','h')--26
+txt = txt:gsub('da','H')--27
+txt = txt:gsub('ti','j')--28
+txt = txt:gsub('di','J')--29
+txt = txt:gsub('tu','k')--30
+txt = txt:gsub('du','K')--31
+txt = txt:gsub('te','l')--32
+txt = txt:gsub('de','L')--33
+txt = txt:gsub('to',';')--34
+txt = txt:gsub('do',':')--35
+txt = txt:gsub('na','n')--36
+txt = txt:gsub('ni','m')--37
+txt = txt:gsub('nu',',')--38
+txt = txt:gsub('ne','.')--39
+txt = txt:gsub('no','/')--40
+txt = txt:gsub('ma','Q')--41
+txt = txt:gsub('mi','W')--42
+txt = txt:gsub('mu','E')--43
+txt = txt:gsub('me','R')--44
+txt = txt:gsub('mo','T')--45
+txt = txt:gsub('ha','z')--46
+txt = txt:gsub('ba','Z')--47
+txt = txt:gsub('pa','N')--48
+txt = txt:gsub('hi','x')--49
+txt = txt:gsub('bi','X')--50
+txt = txt:gsub('pi','M')--51
+txt = txt:gsub('fu','c')--52
+txt = txt:gsub('bu','C')--53
+txt = txt:gsub('pu','<')--54
+txt = txt:gsub('he','v')--55
+txt = txt:gsub('be','V')--56
+txt = txt:gsub('pe','>')--57
+txt = txt:gsub('ho','b')--58
+txt = txt:gsub('bo','B')--59
+txt = txt:gsub('po','?')--60
+txt = txt:gsub('ra','$')--61
+txt = txt:gsub('ri','%')--62
+txt = txt:gsub('ru','^')--63
+txt = txt:gsub('re','&')--64
+txt = txt:gsub('ro','*')--65
+txt = txt:gsub('ya','!')--66
+txt = txt:gsub('yu','@')--67
+txt = txt:gsub('yo','#')--68
+txt = txt:gsub('wa','{')--68
+txt = txt:gsub('wo','}')--68
+txt = txt:gsub('n','|')--68
+txt = txt:gsub('a','q')--1
+txt = txt:gsub('i','w')--2
+txt = txt:gsub('e','r')--4
+txt = txt:gsub('u','e')--3
+txt = txt:gsub('o','t')--5
+txt = txt:gsub('!','-')--69
+txt = txt:gsub('?','+')--70
+txt = txt:gsub(',','~')--71
+txt = txt:gsub('%.','`')--72
+return txt
+end
+
+--[[
+ascikana = {
+--vowels
+['a'] = 'q',--1
+['i'] = 'w',--2
+['u'] = 'e',--3
+['e'] = 'r',--4
+['o'] = 't',--5
+--phonetics
+['ka'] = 'y',--6
+['ga'] = 'Y',--7
+['ki'] = 'u',--8
+['gi'] = 'U',--9
+['ku'] = 'i',--10
+['gu'] = 'I',--11
+['ke'] = 'o',--12
+['ge'] = 'O',--13
+['ko'] = 'p',--14
+['go'] = 'P',--15
+['sa'] = 'a',--16
+['za'] = 'A',--17
+['si'] = 's',--18
+['ji'] = 'S',--19
+['su'] = 'd',--20
+['zu'] = 'D',--21
+['se'] = 'f',--22
+['ze'] = 'F',--23
+['so'] = 'g',--24
+['zo'] = 'G',--25
+['ta'] = 'h',--26
+['da'] = 'H',--27
+['ti'] = 'j',--28
+['di'] = 'J',--29
+['tu'] = 'k',--30
+['du'] = 'K',--31
+['te'] = 'l',--32
+['de'] = 'L',--33
+['to'] = ';',--34
+['do'] = ':',--35
+['na'] = 'n',--36
+['ni'] = 'm',--37
+['nu'] = ',',--38
+['ne'] = '.',--39
+['no'] = '/',--40
+['ma'] = 'Q',--41
+['mi'] = 'W',--42
+['mu'] = 'E',--43
+['me'] = 'R',--44
+['mo'] = 'T',--45
+['ra'] = '$',--46
+['ri'] = '%',--47
+['ru'] = '^',--48
+['re'] = '&',--49
+['ro'] = '*',--50
+['ha'] = 'z',--51
+['ba'] = 'Z',--52
+['pa'] = 'N',--53
+['hi'] = 'x',--54
+['bi'] = 'X',--55
+['pi'] = 'M',--56
+['hu'] = 'c',--57
+['bu'] = 'C',--58
+['pu'] = '<',--59
+['he'] = 'v',--60
+['be'] = 'V',--61
+['pe'] = '>',--62
+['ho'] = 'b',--63
+['bo'] = 'B',--64
+['po'] = '?',--65
+['ya'] = '!',--66
+['yu'] = '@',--67
+['yo'] = '#',--68
+['wa'] = '{',--69
+['wo'] = '}',--70
+['n']  = '|',--71
+--special symbols
+['%.'] = '`',--72
+[','] = '~',--73
+['!'] = '-',--74
+['?'] = '+',--75
+['(('] = '(',--76
+['))'] = ')',--77
+}
+
+function kana(txt)
+    for k,v in pairs(ascikana) do
+    txt = txt:gsub(k,v)
+    end
+    return txt
+end]]
